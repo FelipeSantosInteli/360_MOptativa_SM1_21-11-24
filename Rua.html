@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sala 360</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Assets utilizados no projeto -->
+      <a-assets>
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <img id="img1" src="./images/estac.jpg" />
+        <img id="img2" src="./images/rua.jpg" />
+      </a-assets>
+      
+      
+      <!-- Camera + Cursor. -->
+      <a-camera position="0 1 0" id="cameraCena">
+        <a-cursor intersection-spawn="Event: click; mixin:voxel;">
+        </a-cursor>
+      </a-camera>
+
+      <a-sky id="img-360" radius="30" src="#img2"> </a-sky>
+      <!-- <a-sphere  material="#img"> </a-sphere> -->
+      <a-text value="Estacionamento" position="-1.2 1.5 -5" color="white"></a-text>
+      <a-sphere id="para_frente" position="-2 2 -26" radius="0.5" color="#ed1212"></a-sphere>
+      
+
+    </a-scene>
+  </body>
+  <!-- Cria o script para lidar com a transição -->
+  <script>
+    document.querySelector("#para_frente")
+      .addEventListener("mouseenter", e => {
+        location.href="Estac.html";
+      });
+  </script>
+</html>
